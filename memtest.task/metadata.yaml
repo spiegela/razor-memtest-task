@@ -4,5 +4,4 @@ os_version: 5
 label: Memtest86
 description: This task runs the Memtest86 Advanced Memory Testing Tool
 boot_sequence:
-  1: boot_test
-  default: boot_local
+  default: boot_test

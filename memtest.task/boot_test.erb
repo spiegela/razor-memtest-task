@@ -4,8 +4,10 @@ echo Installation node: <%= node_url  %>
 echo Installation repo: <%= repo_url %>
 
 sleep 3
-kernel <%= repo_url("memtest") %>
-boot
+kernel <%= repo_url("memdisk") %>
+initrd <%= repo_url("memtest86+-5.01.iso") %>
+imgargs memdisk iso raw || read void
+boot || read void
 
 :error
 prompt --key s --timeout 60 ERROR, hit 's' for the iPXE shell; reboot in 60 seconds && shell || reboot
